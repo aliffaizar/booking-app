@@ -1,0 +1,12 @@
+{
+  "name": "tailwind-config",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

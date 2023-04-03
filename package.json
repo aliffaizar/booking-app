@@ -1,0 +1,14 @@
+{
+  "name": "booking-app",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "turbo run dev"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "turbo": "^1.8.5"
+  }
+}
