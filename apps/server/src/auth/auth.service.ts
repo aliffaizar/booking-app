@@ -1,18 +1,22 @@
-import { Injectable } from '@nestjs/common';
+import {
+  ConflictException,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { compare } from 'bcrypt';
 import { Model } from 'mongoose';
 import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
-import { UsersService } from 'src/users/users.service';
-import { AuthRegisterDto } from './dto/auth-register.dto';
+
 import { User, UserDocument } from 'src/users/user.schema';
+import { AuthRegisterDto } from './dto/auth-register.dto';
 
 @Injectable()
 export class AuthService {
   constructor(
     @InjectModel(User.name)
     private readonly userModel: Model<UserDocument>,
-    private readonly userService: UsersService,
+
     private readonly jwtService: JwtService,
   ) {}
 
@@ -23,26 +27,30 @@ export class AuthService {
     email: string;
     password: string;
   }): Promise<object> {
-    const user = await this.validateUser(email, password);
+    const user = await this.userModel.findOne({ email });
+    if (!user) throw new UnauthorizedException('Invalid credentials');
 
-    if (user) {
-      return { accesToken: this.jwtService.sign({ id: user.id }) };
-    }
+    const isMatch = await this.comparePassword(password, user.password);
+    if (!isMatch) throw new UnauthorizedException('Invalid credentials');
+
+    return { accesToken: this.jwtService.sign({ id: user.id }) };
   }
 
   async register(AuthRegisterDto: AuthRegisterDto) {
-    return await this.userModel.create(AuthRegisterDto);
-  }
-
-  async validateUser(email: string, password: string) {
-    const user = await this.userService.findByEmail(email);
-    if (user && (await this.comparePassword(password, user.password))) {
-      return user;
+    try {
+      return await this.userModel.create(AuthRegisterDto);
+    } catch (error) {
+      if (error.code === 11000) {
+        throw new ConflictException('Email already exists');
+      }
     }
-    return null;
   }
 
   async comparePassword(password: string, hashed: string): Promise<boolean> {
     return await compare(password, hashed);
+  }
+
+  async getProfile(id: string) {
+    return await this.userModel.findById(id);
   }
 }
