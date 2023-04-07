@@ -1,4 +1,7 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose';
+import { HydratedDocument } from 'mongoose';
+
+export type HotelDocument = HydratedDocument<Hotel>;
 
 @Schema({
   versionKey: false,
@@ -12,37 +15,32 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
   },
 })
 export class Hotel {
-  @Prop({ required: true })
+  @Prop()
   name: string;
 
-  @Prop({ required: true })
-  address: string;
+  @Prop(
+    raw({
+      address: { type: String },
+      city: { type: String },
+      state: { type: String },
+      country: { type: String },
+    }),
+  )
+  location: Record<string, unknown>;
 
-  @Prop({ required: true })
-  city: string;
-
-  @Prop({ required: true })
-  state: string;
-
-  @Prop({ required: true })
-  country: string;
-
-  @Prop({ required: true })
+  @Prop()
   phone: string;
 
-  @Prop({ required: true })
-  email: string;
-
-  @Prop({ required: true })
+  @Prop()
   description: string;
 
-  @Prop({ required: true })
+  @Prop()
   rating: number;
 
-  @Prop({ required: true })
+  @Prop()
   image: string;
 
-  @Prop({ required: true })
+  @Prop()
   amenities: string[];
 }
 
