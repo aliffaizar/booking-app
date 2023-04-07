@@ -1,29 +1,42 @@
-import { Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+} from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
+
+import { RoomsService } from './rooms.service';
+import { CreateRoomDto } from './dto/create-room.dto';
+import { UpdateRoomDto } from './dto/update-room.dto';
 
 @ApiTags('rooms')
 @Controller('api/rooms')
 export class RoomsController {
+  constructor(private readonly roomService: RoomsService) {}
   @Get()
-  findAll() {
-    return 'This action returns all rooms';
+  async findAll() {
+    return await this.roomService.findAll();
   }
   @Post()
-  create() {
-    return 'This action adds a new room';
+  async create(@Body() createRoomDto: CreateRoomDto) {
+    return await this.roomService.create(createRoomDto);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return `This action returns a #${id} room`;
+  async findOne(@Param('id') id: string) {
+    return await this.roomService.findById(id);
   }
   @Patch(':id')
-  update(@Param('id') id: string) {
-    return `This action updates a #${id} room`;
+  async update(@Param('id') id: string, @Body() updateRoomDto: UpdateRoomDto) {
+    return await this.roomService.update(id, updateRoomDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return `This action removes a #${id} room`;
+  async remove(@Param('id') id: string) {
+    return await this.roomService.delete(id);
   }
 }
