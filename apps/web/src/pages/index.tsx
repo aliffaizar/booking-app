@@ -1,7 +1,11 @@
+import Explore from '@/components/section/home/Explore'
+import Hero from '@/components/section/home/Hero'
+
 export default function Home() {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className='-mt-16'>
+      <Hero />
+      <Explore />
     </div>
   )
 }

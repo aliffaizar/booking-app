@@ -2,3 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  
+  .header{
+    @apply sticky top-0 z-[9999] px-6 lg:px-8 bg-transparent shadow-none text-white
+  }
+  .scrolled-header{
+    @apply bg-white shadow-md transition duration-300 ease-in-out text-gray-800 
+  }
+  .brand-logo{
+    @apply font-bold text-2xl lg:text-3xl 
+  }
+  .header .brand-logo{
+    @apply text-brand-50
+  }
+  .scrolled-header .brand-logo{
+    @apply text-brand-500
+  }
+
+  .slide-hero{
+    @apply h-full
+  }
+  .slide-hero .swiper-slide{
+    @apply h-full relative
+  }
+
+  .slide-hero .swiper-pagination{
+    @apply z-20
+  }
+
+  .slide-hero .swiper-pagination-bullet{
+    @apply bg-white 
+  }
+  
+  .slide-hero .swiper-pagination-bullet-active{
+    @apply w-8 rounded-md bg-white
+  }
+  .hero-date-picker{
+    @apply bg-transparent outline-none border-none ring-0 focus:ring-0 text-gray-700 w-full
+  }
+
+  .hero-date-picker .ant-picker-suffix{
+    @apply hidden
+   }
+
+  .hero-date-picker .ant-picker-active-bar {
+    @apply bg-brand-500
+  }
+  
+  .ant-picker-dropdown{
+    @apply bg-white w-full
+  }
+  
+  .wrapper-explore-swiper .swiper-button-disabled{
+    @apply text-brand-500/30 bg-white/60 hover:bg-white/60 hover:text-brand-500/30
+  }
+  .swiper-button-prev{
+    @apply hidden group-hover:flex items-end justify-center absolute top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-3 bg-white/80 shadow hover:bg-brand-500 hover:text-white p-2 rounded-full left-0 transform z-50 text-brand-500 
+  }
+  .swiper-button-next{
+    @apply hidden group-hover:flex items-end justify-center absolute top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-3 bg-white/80 shadow hover:bg-brand-500 hover:text-white p-2 rounded-full right-0 transform z-50 text-brand-500
+  }
+  
+  
+}

@@ -9,11 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
+    "antd": "^5.4.2",
+    "dayjs": "^1.11.7",
     "next": "13.3.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "swiper": "^9.2.0",
+    "tailwind-config": "workspace:*"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.3",
     "@types/node": "18.11.18",
     "@types/react": "^18.0.30",
     "@types/react-dom": "^18.0.11",
