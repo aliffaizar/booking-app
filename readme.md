@@ -14,7 +14,8 @@ This is a hotel booking web application that allows users to search for and book
 ### Frontend
 
 - React.Js
-- TailwindCSS
+- Next.Js
+- Tailwind CSS
 
 ## Features
 
@@ -24,3 +25,8 @@ This is a hotel booking web application that allows users to search for and book
 - Booking: Users can book a room by entering their payment details and confirming their reservation.
 - Reservation management: Users can view and cancel their reservations, and receive email notifications for important updates.
 - Admin interface: Administrators can manage hotels, including adding, updating, and deleting hotels, and view reservations made at each hotel.
+
+## Credits
+
+- [React Icons](https://react-icons.github.io/react-icons)
+- [Unsplash](https://unsplash.com/)

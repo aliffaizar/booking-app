@@ -8,7 +8,7 @@ import 'swiper/css'
 
 export default function Explore() {
   return (
-    <section className='py-12 md:py-12  lg:py-16 relative'>
+    <section className='py-12 md:py-12 lg:py-16 relative'>
       <h2 className='px-6 lg:px-8 text-2xl lg:text-3xl font-semibold mb-4 lg:mb-6'>
         Explore Destinations
       </h2>

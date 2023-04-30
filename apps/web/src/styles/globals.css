@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components{
+  body{
+    @apply bg-neutral-100
+  }
   
   .header{
     @apply sticky top-0 z-[9999] px-6 lg:px-8 bg-transparent shadow-none text-white
@@ -57,12 +60,28 @@
   .wrapper-explore-swiper .swiper-button-disabled{
     @apply text-brand-500/30 bg-white/60 hover:bg-white/60 hover:text-brand-500/30
   }
-  .swiper-button-prev{
+   .swiper-button-prev{
     @apply hidden group-hover:flex items-end justify-center absolute top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-3 bg-white/80 shadow hover:bg-brand-500 hover:text-white p-2 rounded-full left-0 transform z-50 text-brand-500 
   }
   .swiper-button-next{
     @apply hidden group-hover:flex items-end justify-center absolute top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-3 bg-white/80 shadow hover:bg-brand-500 hover:text-white p-2 rounded-full right-0 transform z-50 text-brand-500
   }
   
+  .card-wrapper{
+    @apply grid gap-2 md:gap-4 lg:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
+  }
+
+  .card{
+    @apply rounded-md bg-white shadow-md shadow-gray-300
+  }
   
+  .card-image{
+    @apply aspect-video rounded-t-md overflow-hidden relative
+  }
+  .card-image img{
+    @apply object-cover w-full h-full object-center rounded-t-md
+  }
+  .card-content{
+    @apply p-4
+  }
 }
