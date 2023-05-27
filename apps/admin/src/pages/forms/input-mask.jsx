@@ -1,7 +1,6 @@
-import React from "react";
-import Card from "@/components/ui/Card";
-import Textinput from "@/components/ui/Textinput";
-import InputGroup from "@/components/ui/InputGroup";
+import Card from '@/components/ui/Card'
+import Textinput from '@/components/ui/Textinput'
+import InputGroup from '@/components/ui/InputGroup'
 
 const InputMask = () => {
   return (
@@ -19,21 +18,21 @@ const InputMask = () => {
             prepend="MY (+6)"
             placeholder="Phone Number"
             id="phoneNumber"
-            options={{ phone: true, phoneRegionCode: "US" }}
+            options={{ phone: true, phoneRegionCode: 'US' }}
             isMask
           />
 
           <Textinput
             label="Date"
             id="date"
-            options={{ date: true, datePattern: ["Y", "m", "d"] }}
+            options={{ date: true, datePattern: ['Y', 'm', 'd'] }}
             placeholder="YYYY-MM-DD"
             isMask
           />
           <Textinput
             label="Time"
             id="time"
-            options={{ time: true, timePattern: ["h", "m", "s"] }}
+            options={{ time: true, timePattern: ['h', 'm', 's'] }}
             placeholder="HH:MM:SS"
             isMask
           />
@@ -54,7 +53,7 @@ const InputMask = () => {
           <Textinput
             label="Delimiters"
             id="delimiters"
-            options={{ delimiter: "·", blocks: [3, 3, 3], uppercase: true }}
+            options={{ delimiter: '·', blocks: [3, 3, 3], uppercase: true }}
             placeholder="Delimiter: '.'"
             isMask
           />
@@ -62,7 +61,7 @@ const InputMask = () => {
             label="Custom Delimiters"
             id="customDelimiter"
             options={{
-              delimiters: [".", ".", "-"],
+              delimiters: ['.', '.', '-'],
               blocks: [3, 3, 3, 2],
               uppercase: true,
             }}
@@ -73,7 +72,7 @@ const InputMask = () => {
             label="prefix"
             id="prefix"
             options={{
-              prefix: "+88",
+              prefix: '+88',
               blocks: [3, 3, 3, 4],
               uppercase: true,
             }}
@@ -83,7 +82,7 @@ const InputMask = () => {
         </div>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default InputMask;
+export default InputMask

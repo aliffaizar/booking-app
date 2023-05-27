@@ -1,9 +1,8 @@
-import React from "react";
-import Switch from "@/components/ui/Switch";
-import useMenuHidden from "@/hooks/useMenuHidden";
+import Switch from '@/components/ui/Switch'
+import useMenuHidden from '@/hooks/useMenuHidden'
 
 const MenuHidden = () => {
-  const [menuHidden, setMenuHidden] = useMenuHidden();
+  const [menuHidden, setMenuHidden] = useMenuHidden()
   return (
     <div className=" flex justify-between">
       <div className="text-slate-600 text-base dark:text-slate-300 font-normal">
@@ -15,7 +14,7 @@ const MenuHidden = () => {
         id="semi_nav_tools3"
       />
     </div>
-  );
-};
+  )
+}
 
-export default MenuHidden;
+export default MenuHidden

@@ -1,12 +1,12 @@
-import React from "react";
-import Radio from "@/components/ui/Radio";
-import useContentWidth from "@/hooks/useContentWidth";
+import Radio from '@/components/ui/Radio'
+import useContentWidth from '@/hooks/useContentWidth'
 
 const CWidth = () => {
-  const [contentWidth, setContentWidth] = useContentWidth();
+  const [contentWidth, setContentWidth] = useContentWidth()
+
   const handleChange = (e) => {
-    setContentWidth(e.target.value);
-  };
+    setContentWidth(e.target.value)
+  }
 
   return (
     <div>
@@ -18,7 +18,7 @@ const CWidth = () => {
           label="Full Width"
           name="cwidth"
           value="full"
-          checked={contentWidth === "full"}
+          checked={contentWidth === 'full'}
           className="h-4 w-4"
           onChange={handleChange}
         />
@@ -27,12 +27,12 @@ const CWidth = () => {
           name="cwidth"
           value="boxed"
           className="h-4 w-4"
-          checked={contentWidth === "boxed"}
+          checked={contentWidth === 'boxed'}
           onChange={handleChange}
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CWidth;
+export default CWidth

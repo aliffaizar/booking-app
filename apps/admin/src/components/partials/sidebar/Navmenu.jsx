@@ -1,42 +1,41 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import { Collapse } from "react-collapse";
-import Icon from "@/components/ui/Icon";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
+import { Collapse } from 'react-collapse'
+
+import Icon from '@/components/ui/Icon'
 
 const Navmenu = ({ menus }) => {
-  const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [activeSubmenu, setActiveSubmenu] = useState(null)
+  const location = useLocation()
+  const locationName = location.pathname.replace('/', '')
 
   const toggleSubmenu = (i) => {
     if (activeSubmenu === i) {
-      setActiveSubmenu(null);
+      setActiveSubmenu(null)
     } else {
-      setActiveSubmenu(i);
+      setActiveSubmenu(i)
     }
-  };
+  }
 
-  const location = useLocation();
-  const locationName = location.pathname.replace("/", "");
-  const dispatch = useDispatch();
   useEffect(() => {
-    let submenuIndex = null;
+    let submenuIndex = null
     menus.map((item, i) => {
-      if (!item.child) return;
+      if (!item.child) return
       if (item.link === locationName) {
-        submenuIndex = null;
+        submenuIndex = null
       } else {
         const ciIndex = item.child.findIndex(
           (ci) => ci.childlink === locationName
-        );
+        )
         if (ciIndex !== -1) {
-          submenuIndex = i;
+          submenuIndex = i
         }
       }
-    });
-    document.title = `Dashcode  | ${locationName}`;
+    })
+    document.title = `Dashcode  | ${locationName}`
 
-    setActiveSubmenu(submenuIndex);
-  }, [location]);
+    setActiveSubmenu(submenuIndex)
+  }, [location, menus, locationName])
 
   return (
     <>
@@ -45,9 +44,9 @@ const Navmenu = ({ menus }) => {
           <li
             key={i}
             className={` single-sidebar-menu 
-              ${item.child ? "item-has-children" : ""}
-              ${activeSubmenu === i ? "open" : ""}
-              ${locationName === item.link ? "menu-item-active" : ""}`}
+              ${item.child ? 'item-has-children' : ''}
+              ${activeSubmenu === i ? 'open' : ''}
+              ${locationName === item.link ? 'menu-item-active' : ''}`}
           >
             {/* single menu with no childred*/}
             {!item.child && !item.isHeadr && (
@@ -68,8 +67,8 @@ const Navmenu = ({ menus }) => {
               <div
                 className={`menu-link ${
                   activeSubmenu === i
-                    ? "parent_active not-collapsed"
-                    : "collapsed"
+                    ? 'parent_active not-collapsed'
+                    : 'collapsed'
                 }`}
                 onClick={() => toggleSubmenu(i)}
               >
@@ -82,7 +81,7 @@ const Navmenu = ({ menus }) => {
                 <div className="flex-0">
                   <div
                     className={`menu-arrow transform transition-all duration-300 ${
-                      activeSubmenu === i ? " rotate-90" : ""
+                      activeSubmenu === i ? ' rotate-90' : ''
                     }`}
                   >
                     <Icon icon="heroicons-outline:chevron-right" />
@@ -99,15 +98,15 @@ const Navmenu = ({ menus }) => {
                         <span
                           className={`${
                             isActive
-                              ? " text-black dark:text-white font-medium"
-                              : "text-slate-600 dark:text-slate-300"
+                              ? ' text-black dark:text-white font-medium'
+                              : 'text-slate-600 dark:text-slate-300'
                           } text-sm flex space-x-3 items-center transition-all duration-150`}
                         >
                           <span
                             className={`${
                               isActive
-                                ? " bg-slate-900 dark:bg-slate-300 ring-4 ring-opacity-[15%] ring-black-500 dark:ring-slate-300 dark:ring-opacity-20"
-                                : ""
+                                ? ' bg-slate-900 dark:bg-slate-300 ring-4 ring-opacity-[15%] ring-black-500 dark:ring-slate-300 dark:ring-opacity-20'
+                                : ''
                             } h-2 w-2 rounded-full border border-slate-600 dark:border-white inline-block flex-none`}
                           ></span>
                           <span className="flex-1">{subItem.childtitle}</span>
@@ -122,7 +121,7 @@ const Navmenu = ({ menus }) => {
         ))}
       </ul>
     </>
-  );
-};
+  )
+}
 
-export default Navmenu;
+export default Navmenu

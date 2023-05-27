@@ -1,10 +1,4 @@
-import React from "react";
-import useDarkMode from "@/hooks/useDarkMode";
-import LogoWhite from "@/assets/images/logo/logo-white.svg";
-import Logo from "@/assets/images/logo/logo.svg";
-import { useSelector } from "react-redux";
 const Loading = () => {
-  const [isDark] = useDarkMode();
   return (
     <div>
       <svg
@@ -29,11 +23,11 @@ const Loading = () => {
       </svg>
 
       <span className=" inline-block mt-1 font-medium  text-sm">
-        {" "}
+        {' '}
         Loading ...
       </span>
     </div>
-  );
-};
+  )
+}
 
-export default Loading;
+export default Loading

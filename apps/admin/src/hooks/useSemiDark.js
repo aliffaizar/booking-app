@@ -1,13 +1,14 @@
-import { handleSemiDarkMode } from "@/store/layout";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from 'react-redux'
+
+import { handleSemiDarkMode } from '@/store/layout'
 
 const useSemiDark = () => {
-  const dispatch = useDispatch();
-  const isSemiDark = useSelector((state) => state.layout.semiDarkMode);
+  const dispatch = useDispatch()
+  const isSemiDark = useSelector((state) => state.layout.semiDarkMode)
 
-  const setSemiDark = (val) => dispatch(handleSemiDarkMode(val));
+  const setSemiDark = (val) => dispatch(handleSemiDarkMode(val))
 
-  return [isSemiDark, setSemiDark];
-};
+  return [isSemiDark, setSemiDark]
+}
 
-export default useSemiDark;
+export default useSemiDark

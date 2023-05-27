@@ -1,12 +1,11 @@
-import React from "react";
-import Radio from "@/components/ui/Radio";
-import useMenuLayout from "@/hooks/useMenulayout";
+import Radio from '@/components/ui/Radio'
+import useMenuLayout from '@/hooks/useMenulayout'
 
 const Menulayout = () => {
-  const [menuType, setMenuLayout] = useMenuLayout();
+  const [menuType, setMenuLayout] = useMenuLayout()
   const handleChange = (e) => {
-    setMenuLayout(e.target.value);
-  };
+    setMenuLayout(e.target.value)
+  }
 
   return (
     <div>
@@ -18,7 +17,7 @@ const Menulayout = () => {
           label="Vertical"
           name="menulayout"
           value="vertical"
-          checked={menuType === "vertical"}
+          checked={menuType === 'vertical'}
           onChange={handleChange}
           className="h-4 w-4"
         />
@@ -26,13 +25,13 @@ const Menulayout = () => {
           label="Horizontal"
           name="menulayout"
           value="horizontal"
-          checked={menuType === "horizontal"}
+          checked={menuType === 'horizontal'}
           onChange={handleChange}
           className="h-4 w-4"
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Menulayout;
+export default Menulayout

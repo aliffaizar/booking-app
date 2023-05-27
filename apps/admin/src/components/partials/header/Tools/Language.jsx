@@ -1,15 +1,16 @@
-import { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
+import { Fragment, useState } from 'react'
+import { Listbox, Transition } from '@headlessui/react'
 
-import Usa from "@/assets/images/flags/usa.png";
-import Gn from "@/assets/images/flags/gn.png";
+import Usa from '@/assets/images/flags/usa.png'
+import Gn from '@/assets/images/flags/gn.png'
+
 const months = [
-  { name: "En", image: Usa },
-  { name: "Gn", image: Gn },
-];
+  { name: 'En', image: Usa },
+  { name: 'Gn', image: Gn },
+]
 
 const Language = () => {
-  const [selected, setSelected] = useState(months[0]);
+  const [selected, setSelected] = useState(months[0])
 
   return (
     <div>
@@ -42,8 +43,8 @@ const Language = () => {
                       w-full border-b border-b-gray-500 border-opacity-10 px-2 py-2 last:border-none last:mb-0 cursor-pointer first:rounded-t last:rounded-b
                         ${
                           active
-                            ? "bg-slate-100 dark:bg-slate-700 dark:bg-opacity-70 bg-opacity-50 dark:text-white "
-                            : "text-slate-600 dark:text-slate-300"
+                            ? 'bg-slate-100 dark:bg-slate-700 dark:bg-opacity-70 bg-opacity-50 dark:text-white '
+                            : 'text-slate-600 dark:text-slate-300'
                         }
                         `}
                     >
@@ -70,7 +71,7 @@ const Language = () => {
         </div>
       </Listbox>
     </div>
-  );
-};
+  )
+}
 
-export default Language;
+export default Language

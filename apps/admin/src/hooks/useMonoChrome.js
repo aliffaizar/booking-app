@@ -1,24 +1,25 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { handleMonoChrome } from "@/store/layout";
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { handleMonoChrome } from '@/store/layout'
 
 const useMonoChrome = () => {
-  const dispatch = useDispatch();
-  const isMonoChrome = useSelector((state) => state.layout.isMonochrome);
+  const dispatch = useDispatch()
+  const isMonoChrome = useSelector((state) => state.layout.isMonochrome)
 
-  const setMonoChrome = (val) => dispatch(handleMonoChrome(val));
+  const setMonoChrome = (val) => dispatch(handleMonoChrome(val))
 
   useEffect(() => {
-    const element = document.getElementsByTagName("html")[0];
+    const element = document.getElementsByTagName('html')[0]
 
     if (isMonoChrome) {
-      element.classList.add("grayscale");
+      element.classList.add('grayscale')
     } else {
-      element.classList.remove("grayscale");
+      element.classList.remove('grayscale')
     }
-  }, [isMonoChrome]);
+  }, [isMonoChrome])
 
-  return [isMonoChrome, setMonoChrome];
-};
+  return [isMonoChrome, setMonoChrome]
+}
 
-export default useMonoChrome;
+export default useMonoChrome

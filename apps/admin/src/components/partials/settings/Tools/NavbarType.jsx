@@ -1,30 +1,29 @@
-import React from "react";
-import Radio from "@/components/ui/Radio";
-import useNavbarType from "@/hooks/useNavbarType";
+import Radio from '@/components/ui/Radio'
+import useNavbarType from '@/hooks/useNavbarType'
 
 const NavType = () => {
-  const [navbarType, setNavbarType] = useNavbarType();
+  const [navbarType, setNavbarType] = useNavbarType()
   const handleChange = (e) => {
-    setNavbarType(e.target.value);
-  };
+    setNavbarType(e.target.value)
+  }
   const navTypes = [
     {
-      label: "Sticky",
-      value: "sticky",
+      label: 'Sticky',
+      value: 'sticky',
     },
     {
-      label: "Static",
-      value: "static",
+      label: 'Static',
+      value: 'static',
     },
     {
-      label: "Floating",
-      value: "floating",
+      label: 'Floating',
+      value: 'floating',
     },
     {
-      label: "Hidden",
-      value: "hidden",
+      label: 'Hidden',
+      value: 'hidden',
     },
-  ];
+  ]
 
   return (
     <div>
@@ -45,7 +44,7 @@ const NavType = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NavType;
+export default NavType

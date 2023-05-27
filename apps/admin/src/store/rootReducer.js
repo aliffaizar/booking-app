@@ -1,6 +1,6 @@
-import layout from "./layout";
+import layout from './layout'
 
 const rootReducer = {
   layout,
-};
-export default rootReducer;
+}
+export default rootReducer

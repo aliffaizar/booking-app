@@ -1,9 +1,8 @@
-import React from "react";
-import Radio from "@/components/ui/Radio";
-import useDarkmode from "@/hooks/useDarkMode";
+import Radio from '@/components/ui/Radio'
+import useDarkmode from '@/hooks/useDarkMode'
 
 const Theme = () => {
-  const [isDark, setDarkMode] = useDarkmode();
+  const [isDark, setDarkMode] = useDarkmode()
 
   return (
     <div>
@@ -29,7 +28,7 @@ const Theme = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Theme;
+export default Theme

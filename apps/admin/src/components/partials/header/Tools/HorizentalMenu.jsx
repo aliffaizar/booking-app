@@ -1,8 +1,8 @@
-import React from "react";
-import { topMenu } from "@/constant/data";
-import Icon from "@/components/ui/Icon";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
+import { topMenu } from '@/constant/data'
+import Icon from '@/components/ui/Icon'
 
 const HorizentalMenu = () => {
   return (
@@ -13,10 +13,10 @@ const HorizentalMenu = () => {
             key={i}
             className={
               item.child
-                ? "menu-item-has-children"
-                : "" || item.megamenu
-                ? "menu-item-has-children has-megamenu"
-                : ""
+                ? 'menu-item-has-children'
+                : '' || item.megamenu
+                ? 'menu-item-has-children has-megamenu'
+                : ''
             }
           >
             {/* Single menu*/}
@@ -82,14 +82,14 @@ const HorizentalMenu = () => {
                             <div className="flex items-center space-x-2 text-[15px] leading-6 rtl:space-x-reverse">
                               <span
                                 className={`h-[6px] w-[6px] rounded-full border border-slate-600 dark:border-white inline-block flex-none ${
-                                  isActive ? " bg-slate-900 dark:bg-white" : ""
+                                  isActive ? ' bg-slate-900 dark:bg-white' : ''
                                 }`}
                               ></span>
                               <span
                                 className={`capitalize ${
                                   isActive
-                                    ? " text-slate-900 dark:text-white font-medium"
-                                    : "text-slate-600 dark:text-slate-300"
+                                    ? ' text-slate-900 dark:text-white font-medium'
+                                    : 'text-slate-600 dark:text-slate-300'
                                 }`}
                               >
                                 {ms_item.m_childtitle}
@@ -107,7 +107,7 @@ const HorizentalMenu = () => {
         ))}
       </ul>
     </div>
-  );
-};
+  )
+}
 
-export default HorizentalMenu;
+export default HorizentalMenu

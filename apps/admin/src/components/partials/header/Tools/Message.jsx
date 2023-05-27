@@ -1,9 +1,9 @@
-import React from "react";
-import Dropdown from "@/components/ui/Dropdown";
-import Icon from "@/components/ui/Icon";
-import { Link } from "react-router-dom";
-import { Menu } from "@headlessui/react";
-import { message } from "@/constant/data";
+import { Link } from 'react-router-dom'
+import { Menu } from '@headlessui/react'
+
+import Dropdown from '@/components/ui/Dropdown'
+import Icon from '@/components/ui/Icon'
+import { message } from '@/constant/data'
 
 const messagelabel = () => {
   return (
@@ -13,10 +13,10 @@ const messagelabel = () => {
         10
       </span>
     </span>
-  );
-};
+  )
+}
 // message slice  0-4
-const newMessage = message.slice(0, 4);
+const newMessage = message.slice(0, 4)
 
 const Message = () => {
   return (
@@ -41,8 +41,8 @@ const Message = () => {
               <div
                 className={`${
                   active
-                    ? "bg-slate-100 text-slate-800 dark:bg-slate-600 dark:bg-opacity-70"
-                    : "text-slate-600 dark:text-slate-300"
+                    ? 'bg-slate-100 text-slate-800 dark:bg-slate-600 dark:bg-opacity-70'
+                    : 'text-slate-600 dark:text-slate-300'
                 } block w-full px-4 py-2 text-sm  cursor-pointer`}
               >
                 <div className="flex ltr:text-left rtl:text-right space-x-3 rtl:space-x-reverse">
@@ -50,7 +50,7 @@ const Message = () => {
                     <div className="h-8 w-8 bg-white dark:bg-slate-700 rounded-full relative">
                       <span
                         className={`${
-                          item.active ? "bg-secondary-500" : "bg-green-500"
+                          item.active ? 'bg-secondary-500' : 'bg-green-500'
                         } w-[10px] h-[10px] rounded-full border border-white dark:border-slate-700  inline-block absolute right-0 top-0`}
                       ></span>
                       <img
@@ -85,7 +85,7 @@ const Message = () => {
         ))}
       </div>
     </Dropdown>
-  );
-};
+  )
+}
 
-export default Message;
+export default Message

@@ -1,11 +1,9 @@
-import React, { lazy, Suspense } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { lazy } from 'react'
+import { Routes, Route } from 'react-router-dom'
 
-// home pages  & dashboard
-//import Dashboard from "./pages/dashboard";
-const Dashboard = lazy(() => import("./pages/dashboard"));
+const Dashboard = lazy(() => import('./pages/dashboard'))
 
-import Layout from "./layout/Layout";
+import Layout from './layout/Layout'
 
 function App() {
   return (
@@ -16,7 +14,7 @@ function App() {
         </Route>
       </Routes>
     </main>
-  );
+  )
 }
 
-export default App;
+export default App

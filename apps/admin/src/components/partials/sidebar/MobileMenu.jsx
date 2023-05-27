@@ -1,39 +1,36 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import Navmenu from "./Navmenu";
-import { menuItems } from "@/constant/data";
-import SimpleBar from "simplebar-react";
-import useSemiDark from "@/hooks/useSemiDark";
-import useSkin from "@/hooks/useSkin";
-import useDarkMode from "@/hooks/useDarkMode";
-import { Link } from "react-router-dom";
-import useMobileMenu from "@/hooks/useMobileMenu";
-import Icon from "@/components/ui/Icon";
+import Navmenu from './Navmenu'
+import { menuItems } from '@/constant/data'
+import SimpleBar from 'simplebar-react'
+import useSemiDark from '@/hooks/useSemiDark'
+import useDarkMode from '@/hooks/useDarkMode'
+import useMobileMenu from '@/hooks/useMobileMenu'
+import Icon from '@/components/ui/Icon'
 
 // import images
-import MobileLogo from "@/assets/images/logo/logo-c.svg";
-import MobileLogoWhite from "@/assets/images/logo/logo-c-white.svg";
-import svgRabitImage from "@/assets/images/svg/rabit.svg";
+import MobileLogo from '@/assets/images/logo/logo-c.svg'
+import MobileLogoWhite from '@/assets/images/logo/logo-c-white.svg'
 
 const MobileMenu = () => {
-  const scrollableNodeRef = useRef();
-  const [scroll, setScroll] = useState(false);
+  const scrollableNodeRef = useRef()
+  const [scroll, setScroll] = useState(false)
+
+  const [isSemiDark] = useSemiDark()
+  const [isDark] = useDarkMode()
+  const [mobileMenu, setMobileMenu] = useMobileMenu()
+
   useEffect(() => {
     const handleScroll = () => {
       if (scrollableNodeRef.current.scrollTop > 0) {
-        setScroll(true);
+        setScroll(true)
       } else {
-        setScroll(false);
+        setScroll(false)
       }
-    };
-    scrollableNodeRef.current.addEventListener("scroll", handleScroll);
-  }, [scrollableNodeRef]);
-
-  const [isSemiDark] = useSemiDark();
-  // skin
-  const [skin] = useSkin();
-  const [isDark] = useDarkMode();
-  const [mobileMenu, setMobileMenu] = useMobileMenu();
+    }
+    scrollableNodeRef.current.addEventListener('scroll', handleScroll)
+  }, [scrollableNodeRef])
   return (
     <div className=" fixed left-0 top-0 z-[9999] bg-white dark:bg-slate-800 shadow-lg  h-full  transition-all duration-150 w-[248px] ">
       <div className="logo-segment flex justify-between items-center bg-white dark:bg-slate-800 z-[9] h-[85px]  px-4 ">
@@ -64,7 +61,7 @@ const MobileMenu = () => {
 
       <div
         className={`h-[60px]  absolute top-[80px] nav-shadow z-[1] w-full transition-all duration-200 pointer-events-none ${
-          scroll ? " opacity-100" : " opacity-0"
+          scroll ? ' opacity-100' : ' opacity-0'
         }`}
       ></div>
       <SimpleBar
@@ -74,7 +71,7 @@ const MobileMenu = () => {
         <Navmenu menus={menuItems} />
       </SimpleBar>
     </div>
-  );
-};
+  )
+}
 
-export default MobileMenu;
+export default MobileMenu

@@ -1,27 +1,26 @@
-import React from "react";
-import Radio from "@/components/ui/Radio";
-import useFooterType from "@/hooks/useFooterType";
+import Radio from '@/components/ui/Radio'
+import useFooterType from '@/hooks/useFooterType'
 
 const FooType = () => {
-  const [footerType, setFooterType] = useFooterType();
+  const [footerType, setFooterType] = useFooterType()
   const handleChange = (e) => {
-    setFooterType(e.target.value);
-  };
+    setFooterType(e.target.value)
+  }
   const fotypes = [
     {
-      label: "Sticky",
-      value: "sticky",
+      label: 'Sticky',
+      value: 'sticky',
     },
     {
-      label: "Static",
-      value: "static",
+      label: 'Static',
+      value: 'static',
     },
 
     {
-      label: "Hidden",
-      value: "hidden",
+      label: 'Hidden',
+      value: 'hidden',
     },
-  ];
+  ]
 
   return (
     <div>
@@ -42,7 +41,7 @@ const FooType = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FooType;
+export default FooType

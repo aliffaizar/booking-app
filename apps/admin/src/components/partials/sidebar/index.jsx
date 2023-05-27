@@ -1,59 +1,57 @@
-import React, { useRef, useEffect, useState } from "react";
-import SidebarLogo from "./Logo";
-import Navmenu from "./Navmenu";
-import { menuItems } from "@/constant/data";
-import SimpleBar from "simplebar-react";
-import useSidebar from "@/hooks/useSidebar";
-import useSemiDark from "@/hooks/useSemiDark";
-import useSkin from "@/hooks/useSkin";
-import svgRabitImage from "@/assets/images/svg/rabit.svg";
+import { useRef, useEffect, useState } from 'react'
+import SimpleBar from 'simplebar-react'
+
+import SidebarLogo from './Logo'
+import Navmenu from './Navmenu'
+import { menuItems } from '@/constant/data'
+import useSidebar from '@/hooks/useSidebar'
+import useSemiDark from '@/hooks/useSemiDark'
+import useSkin from '@/hooks/useSkin'
 
 const Sidebar = () => {
-  const scrollableNodeRef = useRef();
-  const [scroll, setScroll] = useState(false);
+  const scrollableNodeRef = useRef()
+  const [scroll, setScroll] = useState(false)
+  const [menuHover, setMenuHover] = useState(false)
+
+  const [collapsed] = useSidebar()
+  const [isSemiDark] = useSemiDark()
+  const [skin] = useSkin()
 
   useEffect(() => {
     const handleScroll = () => {
       if (scrollableNodeRef.current.scrollTop > 0) {
-        setScroll(true);
+        setScroll(true)
       } else {
-        setScroll(false);
+        setScroll(false)
       }
-    };
-    scrollableNodeRef.current.addEventListener("scroll", handleScroll);
-  }, [scrollableNodeRef]);
+    }
+    scrollableNodeRef.current.addEventListener('scroll', handleScroll)
+  }, [scrollableNodeRef])
 
-  const [collapsed, setMenuCollapsed] = useSidebar();
-  const [menuHover, setMenuHover] = useState(false);
-
-  // semi dark option
-  const [isSemiDark] = useSemiDark();
-  // skin
-  const [skin] = useSkin();
   return (
-    <div className={isSemiDark ? "dark" : ""}>
+    <div className={isSemiDark ? 'dark' : ''}>
       <div
         className={`sidebar-wrapper bg-white dark:bg-slate-800     ${
-          collapsed ? "w-[72px] close_sidebar" : "w-[248px]"
+          collapsed ? 'w-[72px] close_sidebar' : 'w-[248px]'
         }
-      ${menuHover ? "sidebar-hovered" : ""}
+      ${menuHover ? 'sidebar-hovered' : ''}
       ${
-        skin === "bordered"
-          ? "border-r border-slate-200 dark:border-slate-700"
-          : "shadow-base"
+        skin === 'bordered'
+          ? 'border-r border-slate-200 dark:border-slate-700'
+          : 'shadow-base'
       }
       `}
         onMouseEnter={() => {
-          setMenuHover(true);
+          setMenuHover(true)
         }}
         onMouseLeave={() => {
-          setMenuHover(false);
+          setMenuHover(false)
         }}
       >
         <SidebarLogo menuHover={menuHover} />
         <div
           className={`h-[60px]  absolute top-[80px] nav-shadow z-[1] w-full transition-all duration-200 pointer-events-none ${
-            scroll ? " opacity-100" : " opacity-0"
+            scroll ? ' opacity-100' : ' opacity-0'
           }`}
         ></div>
 
@@ -65,7 +63,7 @@ const Sidebar = () => {
         </SimpleBar>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar
