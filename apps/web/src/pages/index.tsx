@@ -1,13 +1,11 @@
-import Explore from '@/components/section/home/Explore'
-import Hero from '@/components/section/home/Hero'
-import Listing from '@/components/section/home/Listing'
+import Recommendation from "@/components/section/main/Recommendation";
 
 export default function Home() {
   return (
-    <div className='-mt-16'>
-      <Hero />
-      <Explore />
-      <Listing />
+    <div id="home">
+      <Recommendation />
+      {/* <Explore />
+      <Listing /> */}
     </div>
-  )
+  );
 }

@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
+@import url("https://fonts.googleapis.com/css2?family=Karma:wght@300&display=swap");
+
+/* @layer components{
   body{
     @apply bg-neutral-100
   }
@@ -84,4 +86,38 @@
   .card-content{
     @apply p-4
   }
+} */
+
+/* #main-layout {
+  height: 100vh;
+  background-color: red;
+} */
+
+body {
+  background-color: white;
+}
+
+#main-layout {
+  width: 100vw;
+}
+
+#header {
+  height: 10vh;
+}
+
+#header,
+#home {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+@media only screen and (max-width: 1200px) {
+  #header,
+  #home {
+    margin: 0 12px;
+  }
+}
+
+.karma-font {
+  font-family: 'Karma', serif;
 }
