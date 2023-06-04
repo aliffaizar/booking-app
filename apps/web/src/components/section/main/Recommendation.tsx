@@ -1,20 +1,16 @@
-import { Autoplay, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 
-import { HERO_RECOMMENDATION } from "@/config/constants";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import Card, { CardBody, CardImage, CardSection } from "@/lib/Card";
-import { Text, Title } from "@/lib";
-import { StarIcon } from "@/lib/Icon";
-import Button from "@/lib/Button";
+import { HERO_RECOMMENDATION } from '@/config/constants'
+import { Text, Title } from '@/lib'
+import Card, { CardBody, CardImage, CardSection } from '@/lib/Card'
+import { StarIcon } from '@/lib/Icon'
+import 'swiper/css'
+import 'swiper/css/pagination'
 
 export default function Recommendation() {
-  const size: number = 8;
+  const size: number = 8
 
   return (
-    <div className="relative h-full w-full">
+    <section className="relative h-full w-full">
       <Title
         className="w-3/12 my-5 lg:w-2/12"
         title="Our Beloved Recommendation"
@@ -33,7 +29,7 @@ export default function Recommendation() {
               <CardSection className="flex items-center">
                 <StarIcon height="16px" width="16px" className="h-full" />
                 <Text>
-                  {props.rating} · {props.reviewsCount} reviews ·{" "}
+                  {props.rating} · {props.reviewsCount} reviews ·{' '}
                   {props.cityLocation}, {props.countryLocation}
                 </Text>
               </CardSection>
@@ -41,6 +37,6 @@ export default function Recommendation() {
           </Card>
         ))}
       </div>
-    </div>
-  );
+    </section>
+  )
 }
