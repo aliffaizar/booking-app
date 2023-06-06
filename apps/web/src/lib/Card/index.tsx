@@ -8,7 +8,7 @@ export default function Card({
     <div className={className} style={{ height: height, width: width }}>
       {children}
     </div>
-  );
+  )
 }
 
 export function CardImage({
@@ -28,13 +28,17 @@ export function CardImage({
         className={className}
       />
     </div>
-  );
+  )
+}
+
+export function CardHeader({ children, className }: CardProps) {
+  return <div className={className}>{children}</div>
 }
 
 export function CardBody({ children, className }: CardProps) {
-  return <div className={className}>{children}</div>;
+  return <div className={className}>{children}</div>
 }
 
 export function CardSection({ children, className }: CardProps) {
-  return <div className={className}>{children}</div>;
+  return <div className={className}>{children}</div>
 }

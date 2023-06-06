@@ -1,15 +1,15 @@
 interface SVGProps {
-  height?: string;
-  width?: string;
-  fill?: string;
-  className?: string;
+  height?: string
+  width?: string
+  fill?: string
+  className?: string
 }
 
 const BrandIcon = ({
-  height = "100%",
-  width = "100%",
-  fill = "black",
-  className = "",
+  height = '',
+  width = '',
+  fill = 'black',
+  className = '',
 }: SVGProps) => (
   <svg
     viewBox="0 0 140 90"
@@ -26,13 +26,13 @@ const BrandIcon = ({
       fill={fill}
     />
   </svg>
-);
+)
 
 const ProfileIcon = ({
-  height = "100%",
-  width = "100%",
-  fill = "black",
-  className = "",
+  height = '',
+  width = '',
+  fill = 'black',
+  className = '',
 }: SVGProps) => (
   <svg
     viewBox="0 0 58 57"
@@ -55,13 +55,13 @@ const ProfileIcon = ({
       fill={fill}
     />
   </svg>
-);
+)
 
 const StarIcon = ({
-  height = "100%",
-  width = "100%",
-  fill = "black",
-  className = "",
+  height = '',
+  width = '',
+  fill = 'black',
+  className = '',
 }: SVGProps) => (
   <svg
     viewBox="0 0 14 14"
@@ -76,6 +76,60 @@ const StarIcon = ({
       fill={fill}
     />
   </svg>
-);
+)
 
-export { BrandIcon, ProfileIcon, StarIcon };
+const GoogleIcon = ({
+  height = '',
+  width = '',
+  fill = 'black',
+  className = '',
+}: SVGProps) => (
+  <svg
+    viewBox="0 0 48 45"
+    xmlns="http://www.w3.org/2000/svg"
+    height={height}
+    width={width}
+    fill={fill}
+    className={className}
+  >
+    <path
+      d="M43.611 19.2402H42V19.1646H24V26.4557H35.303C33.654 30.7 29.223 33.7468 24 33.7468C17.373 33.7468 12 28.8499 12 22.8101C12 16.7703 17.373 11.8734 24 11.8734C27.059 11.8734 29.842 12.9252 31.961 14.6431L37.618 9.48739C34.046 6.45336 29.268 4.58228 24 4.58228C12.955 4.58228 4 12.7438 4 22.8101C4 32.8765 12.955 41.038 24 41.038C35.045 41.038 44 32.8765 44 22.8101C44 21.5879 43.862 20.3949 43.611 19.2402Z"
+      fill="#FFC107"
+    />
+    <path
+      d="M6.30603 14.326L12.877 18.718C14.655 14.706 18.961 11.8734 24 11.8734C27.059 11.8734 29.842 12.9252 31.961 14.6431L37.618 9.48739C34.046 6.45336 29.268 4.58228 24 4.58228C16.318 4.58228 9.65603 8.53498 6.30603 14.326Z"
+      fill="#FF3D00"
+    />
+    <path
+      d="M23.9999 41.0379C29.1659 41.0379 33.8599 39.2361 37.4089 36.306L31.2189 31.5321C29.1435 32.9707 26.6074 33.7487 23.9999 33.7468C18.7979 33.7468 14.3809 30.7237 12.7169 26.5049L6.19495 31.0846C9.50495 36.9877 16.2269 41.0379 23.9999 41.0379Z"
+      fill="#4CAF50"
+    />
+    <path
+      d="M43.611 19.2402H42V19.1646H24V26.4557H35.303C34.5142 28.4757 33.0934 30.2409 31.216 31.5331L31.219 31.5312L37.409 36.3051C36.971 36.6678 44 31.924 44 22.8101C44 21.5879 43.862 20.3949 43.611 19.2402Z"
+      fill="#1976D2"
+    />
+  </svg>
+)
+
+const EmailIcon = ({
+  height = '',
+  width = '',
+  fill = 'black',
+  className = '',
+}: SVGProps) => (
+  <svg
+    viewBox="0 0 48 36"
+    xmlns="http://www.w3.org/2000/svg"
+    height={height}
+    width={width}
+    fill={fill}
+    className={className}
+  >
+    <path
+      d="M48 4.5C48 2.025 45.84 0 43.2 0H4.8C2.16 0 0 2.025 0 4.5V31.5C0 33.975 2.16 36 4.8 36H43.2C45.84 36 48 33.975 48 31.5V4.5ZM43.2 4.5L24 15.75L4.8 4.5H43.2ZM43.2 31.5H4.8V9L24 20.25L43.2 9V31.5Z"
+      fill="#584747"
+    />
+  </svg>
+)
+
+export { BrandIcon, ProfileIcon, StarIcon, GoogleIcon, EmailIcon }
